@@ -312,14 +312,232 @@ console.log(fillInNumbersResult)
 
 // includes Array method - return true or false
 
-const fuitsArray = ['Apple','Grapes','Mango','Orange'];
+const fuitsArray = ['Apple', 'Grapes', 'Mango', 'Orange'];
 
 const includesResult = fuitsArray.includes('Orange');
 
 console.log(includesResult);
 
-if(includesResult){
-    console.log("Yay!");
-} else{
+if (includesResult) {
+    console.log("Yappy!");
+} else {
     console.log("Sad... Let's buy an Apple");
 }
+
+// join Array method - create new string from an array by concatinating all the elements from that array
+
+const countries = ['Romania', 'USA', 'India'];
+
+const res = countries.join(', ');
+console.log(res);
+
+// reverse Array method - reverse an original array
+const numbersArr = [1, 2, 5, 10, 6, 4];
+
+numbersArr.reverse();
+
+console.log(numbersArr);
+
+// if we don't want to change an original array then spread oprator or concat method will be used
+
+const numbersArr1 = [10, 20, 5, 6, 30, 1];
+// const reverseArr = numbersArr1.concat().reverse();
+const reverseArr = [...numbersArr1].reverse();
+console.log(reverseArr);
+
+const str = 'Coding is fun!';
+
+const strReverse = str.split('').reverse().join('');
+console.log(strReverse);
+
+// push Array method - add one or more elements in last and return length of an array
+
+console.log(numbers);
+
+const pushResult = numbers.push(100);
+console.log(numbers);
+console.log(pushResult);
+
+// pop Array method - remove last element in an array and return that element
+
+console.log(numbers);
+
+const popResult = numbers.pop();
+console.log(numbers);
+console.log(popResult);
+
+// unshift Array method - add one or more elements in the begining of an array and return length of an array
+
+console.log(numbers);
+
+const unshiftResult = numbers.unshift(100,200,300);
+
+console.log(numbers);
+console.log(unshiftResult);
+
+// shift Array method - remove an element in the begining of an array and return that element 
+
+console.log(numbers);
+
+const shiftResult = numbers.shift();
+
+console.log(numbers);
+console.log(shiftResult);
+
+// indexOf Array method - returns index of first element found in the array. if element not found then return -1
+
+const freinds = ['Florin','Ivan','Liam','Ivan'];
+
+const indexIvan = freinds.indexOf('Ivan');
+
+console.log(freinds);
+
+if(indexIvan > -1){
+    console.log('Yey, we have Ivan at index : '+indexIvan);
+} else{
+    console.log('Sad....')
+}
+// console.log(indexIvan);
+
+// lastIndexOf Array method - returns index of last element found in the array. if element not found then return -1
+
+const lastIndexIvan = freinds.lastIndexOf('Ivan');
+
+if(lastIndexIvan > -1){
+    console.log('Yey, we have Ivan at index : '+lastIndexIvan);
+} else{
+    console.log('Sad....')
+}
+// console.log(indexIvan);
+
+// every Array method - return true only if the callback function return true for every element
+
+console.log(numbers);
+
+const everyResult = numbers.every(positiveNumbers);
+
+function positiveNumbers(item){
+    return item>0;
+}
+
+console.log(everyResult);
+
+const persons = [
+    {
+        name: 'Florin'
+    },
+    {
+        name: 'Ivan'
+    },
+    {
+        name: 'Liam'
+    },
+    {
+        surname: 'Jai'
+    }
+]
+
+const personsEveryResult = persons.every(person => person.name !== undefined);
+
+console.log(personsEveryResult);
+
+const arrays = [[1,2,3],[4,5,6],[7,8,9]];
+
+const arraysEveryResult = arrays.every(arr => Array.isArray(arr));
+
+console.log(arraysEveryResult);
+
+// some Array method - return true if the callback function return true atleast for one element
+
+console.log(numbers);
+
+const someResult = numbers.some(greaterThan100);
+
+function greaterThan100(item){
+    return item>100;
+}
+
+console.log(someResult);
+
+const peoples = [
+    {
+        name: 'Florin',
+        age: 25
+    },
+    {
+        name: 'Ivan',
+        age: 20
+    },
+    {
+        name: 'Liam',
+        age: 16
+    },
+]
+
+const peoplesSomeAdultResult = peoples.some(isAdult);
+
+function isAdult(people){
+    return people.age > 18;
+}
+
+console.log(peoplesSomeAdultResult);
+
+// find Array method - return searched item if callback function return truthy value otherwise return undefined
+
+console.log(freinds);
+
+const resultFindLiam = freinds.find(friend => friend === 'Liam');
+
+console.log(resultFindLiam);
+
+console.log(peoples);
+
+const personNameIvanAge = peoples.find(person => person.name === 'Ivan').age;
+
+console.log(personNameIvanAge);
+
+// findIndex Array method - return index of searched item if callback function return truthy value otherwise return -1
+
+console.log(numbers);
+
+const findIndexResult = numbers.findIndex(numberTwenty);
+
+function numberTwenty(item){
+    return item === 2000;
+}
+
+console.log(findIndexResult);
+
+// from Array method - creates a new shallow copy 
+const numsStr = '123456789'
+console.log(numsStr);
+
+const fromArrayResult = Array.from(numsStr,Number);
+
+console.log(fromArrayResult);
+
+const duplicateNumbers = [1,2,3,3,2,1,4,4,3,2,1,5];
+
+const unique = Array.from(new Set(duplicateNumbers));
+
+console.log(unique);
+
+// isArray Array method - checks is the passed value is Array
+
+const number = 20;
+console.log(names);
+console.log(str);
+console.log(number);
+
+console.log(Array.isArray(names));
+console.log(Array.isArray(str));
+console.log(Array.isArray(number));
+
+// flat Array method - creates a new array with all the subarray elements concatinated into it
+
+const arr = [1,[2,[3,[4]]]];
+
+const flatResult = arr.flat(Infinity);
+
+console.log(arr);
+console.log(flatResult);
